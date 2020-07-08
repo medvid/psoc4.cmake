@@ -1,0 +1,34 @@
+[
+    {
+        "name": "CY8CKIT-149/NOOS/GCC",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-149",
+            "OS": "NOOS",
+            "TOOLCHAIN": "GCC"
+        }
+    },
+    {
+        "name": "CY8CKIT-149/NOOS/ARM",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-149",
+            "OS": "NOOS",
+            "TOOLCHAIN": "ARM"
+        }
+    },
+    {
+        "name": "CY8CKIT-149/NOOS/IAR",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-149",
+            "OS": "NOOS",
+            "TOOLCHAIN": "IAR"
+        }
+    },
+    {
+        "name": "CY8CKIT-149/NOOS/LLVM",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-149",
+            "OS": "NOOS",
+            "TOOLCHAIN": "LLVM"
+        }
+    }
+]
