@@ -1,4 +1,4 @@
-project(tcpwm-interrupt)
+project(wdt)
 
 # This application provides custom design.modus for the below boards
 psoc4_check_bsp(
@@ -8,8 +8,8 @@ psoc4_check_bsp(
 )
 
 psoc4_load_application(
-  NAME mtb-example-psoc4-tcpwm-interrupt
-  VERSION 2.0.0
+  NAME mtb-example-psoc4-wdt
+  VERSION 1.0.0
 )
 psoc4_add_executable(
   SOURCES

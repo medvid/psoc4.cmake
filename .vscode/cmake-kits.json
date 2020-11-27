@@ -1,5 +1,69 @@
 [
     {
+        "name": "CY8CKIT-145-40XX/NOOS/GCC",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-145-40XX",
+            "OS": "NOOS",
+            "TOOLCHAIN": "GCC"
+        }
+    },
+    {
+        "name": "CY8CKIT-145-40XX/NOOS/ARM",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-145-40XX",
+            "OS": "NOOS",
+            "TOOLCHAIN": "ARM"
+        }
+    },
+    {
+        "name": "CY8CKIT-145-40XX/NOOS/IAR",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-145-40XX",
+            "OS": "NOOS",
+            "TOOLCHAIN": "IAR"
+        }
+    },
+    {
+        "name": "CY8CKIT-145-40XX/NOOS/LLVM",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-145-40XX",
+            "OS": "NOOS",
+            "TOOLCHAIN": "LLVM"
+        }
+    },
+    {
+        "name": "CY8CKIT-041-41XX/NOOS/GCC",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-041-41XX",
+            "OS": "NOOS",
+            "TOOLCHAIN": "GCC"
+        }
+    },
+    {
+        "name": "CY8CKIT-041-41XX/NOOS/ARM",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-041-41XX",
+            "OS": "NOOS",
+            "TOOLCHAIN": "ARM"
+        }
+    },
+    {
+        "name": "CY8CKIT-041-41XX/NOOS/IAR",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-041-41XX",
+            "OS": "NOOS",
+            "TOOLCHAIN": "IAR"
+        }
+    },
+    {
+        "name": "CY8CKIT-041-41XX/NOOS/LLVM",
+        "cmakeSettings": {
+            "TARGET": "CY8CKIT-041-41XX",
+            "OS": "NOOS",
+            "TOOLCHAIN": "LLVM"
+        }
+    },
+    {
         "name": "CY8CKIT-149/NOOS/GCC",
         "cmakeSettings": {
             "TARGET": "CY8CKIT-149",

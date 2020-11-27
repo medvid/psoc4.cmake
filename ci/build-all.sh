@@ -109,6 +109,8 @@ done
 # Set default values for all optional arguments
 # NOTE: commented non-essential BSPs to speedup the CI pipeline
 [[ -z ${bsp_list+x} ]] && bsp_list=(
+  "CY8CKIT-145-40XX"
+  "CY8CKIT-041-41XX"
   "CY8CKIT-149"
 )
 [[ -z ${os_list+x} ]] && os_list=(

@@ -1,11 +1,11 @@
 /***************************************************************************//**
 * \file cy_syslib_clang.S
-* \version 1.0
+* \version 2.0
 *
 * \brief Assembly routines for Clang.
 *
 * \note
-* Based on cy_syslib_gcc.S provided with psoc4pdl-1.0.0
+* Based on cy_syslib_gcc.S provided with mtb-pdl-cat2-1.0.0
 *
 ********************************************************************************
 * \copyright

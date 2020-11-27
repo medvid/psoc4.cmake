@@ -5,16 +5,15 @@ endif()
 
 # This application provides custom design.modus for the below boards
 psoc4_check_bsp(
-  CY8CKIT-041-41XX
   CY8CKIT-145-40XX
   CY8CKIT-149
 )
 
-project(capsense-csx-button-tuning)
+project(capsense-csd-slider-tuning)
 
 psoc4_load_application(
-  NAME mtb-example-psoc4-capsense-csx-button-tuning
-  VERSION 2.0.0
+  NAME mtb-example-psoc4-capsense-csd-slider-tuning
+  VERSION 1.0.0
 )
 psoc4_add_executable(
   SOURCES

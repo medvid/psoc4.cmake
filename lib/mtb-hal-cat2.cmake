@@ -1,0 +1,152 @@
+psoc4_load_library(
+  NAME mtb-hal-cat2
+  VERSION 1.0.0
+)
+
+set(MTB_HAL_CAT2_SOURCES
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_adc.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_clock.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_comp.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_crc.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_dma.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_ezi2c.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_flash.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_general_types.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_gpio.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_hwmgr.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_i2c.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_i2s.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_interconnect.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_lptimer.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_opamp.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_pwm.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_quaddec.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_spi.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_syspm.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_system.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_timer.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_trng.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_uart.h
+  ${MTB_HAL_CAT2_DIR}/include/cyhal_wdt.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_adc_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_analog_common.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_clock_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_dma_dmac.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_dma_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_drivers.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_gpio_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_hw_resources.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_hw_types.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_interconnect_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_pin_package.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_pwm_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_quaddec_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_scb_common.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_syspm_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_system_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_tcpwm_common.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_timer_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_triggers.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_utils.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_wdt_impl_common.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/cyhal_wdt_impl.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_adc.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_analog_common.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_clock.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_dma.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_dma_dmac.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_ezi2c.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_flash.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_gpio.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_hwmgr.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_i2c.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_interconnect.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_lptimer.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_pwm.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_quaddec.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_scb_common.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_spi.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_syspm.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_system.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_tcpwm_common.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_timer.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_uart.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_utils.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/cyhal_wdt.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4000s_20_ssop.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4000s_24_qfn.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4000s_25_wlcsp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4000s_28_ssop_auto.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4000s_32_qfn.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4000s_32_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4000s_40_qfn.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4000s_48_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100s_28_ssop_auto.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100s_32_qfn.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100s_35_wlcsp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100s_40_qfn_auto.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100s_40_qfn.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100s_44_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100s_48_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100smax_100_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100smax_48_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100smax_64_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100sp256kb_48_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100sp256kb_48_tqfp_mc.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100sp256kb_64_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100sp256kb_64_tqfp_mc.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100sp_40_qfn_2.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100sp_44_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100sp_48_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/pin_packages/cyhal_psoc4100sp_64_tqfp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4000s_20_ssop.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4000s_24_qfn.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4000s_25_wlcsp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4000s_28_ssop_auto.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4000s_32_qfn.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4000s_32_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4000s_40_qfn.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4000s_48_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100s_28_ssop_auto.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100s_32_qfn.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100s_35_wlcsp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100s_40_qfn_auto.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100s_40_qfn.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100s_44_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100s_48_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100smax_100_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100smax_48_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100smax_64_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100sp256kb_48_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100sp256kb_48_tqfp_mc.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100sp256kb_64_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100sp256kb_64_tqfp_mc.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100sp_40_qfn_2.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100sp_44_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100sp_48_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/pin_packages/cyhal_psoc4100sp_64_tqfp.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/triggers/cyhal_triggers_pmg1s3.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/triggers/cyhal_triggers_psoc4000s.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/triggers/cyhal_triggers_psoc4100s.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/triggers/cyhal_triggers_psoc4100smax.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/triggers/cyhal_triggers_psoc4100sp256kb.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include/triggers/cyhal_triggers_psoc4100sp.h
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/triggers/cyhal_triggers_pmg1s3.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/triggers/cyhal_triggers_psoc4000s.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/triggers/cyhal_triggers_psoc4100s.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/triggers/cyhal_triggers_psoc4100smax.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/triggers/cyhal_triggers_psoc4100sp256kb.c
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/source/triggers/cyhal_triggers_psoc4100sp.c
+)
+set(MTB_HAL_CAT2_INCLUDE_DIRS
+  ${MTB_HAL_CAT2_DIR}/include
+  ${MTB_HAL_CAT2_DIR}/COMPONENT_CAT2/include
+)
+set(MTB_HAL_CAT2_LINK_LIBRARIES
+  mtb-pdl-cat2
+)
+
+add_library(mtb-hal-cat2 STATIC EXCLUDE_FROM_ALL ${MTB_HAL_CAT2_SOURCES})
+target_include_directories(mtb-hal-cat2 PUBLIC ${MTB_HAL_CAT2_INCLUDE_DIRS})
+target_link_libraries(mtb-hal-cat2 PUBLIC ${MTB_HAL_CAT2_LINK_LIBRARIES})

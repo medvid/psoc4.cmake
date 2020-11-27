@@ -18,7 +18,7 @@ set(FETCHCONTENT_BASE_DIR "${CMAKE_SOURCE_DIR}/build/_deps" CACHE STRING "" FORC
 #
 # A. Define CY_TOOLS_PATHS as CMake option or system environment variable
 #    Example:
-#      cmake -DCY_TOOLS_PATHS=C:/ModusToolbox/tools_2.1
+#      cmake -DCY_TOOLS_PATHS=C:/ModusToolbox/tools_2.2
 #      psoc4_add_tools()
 #
 # B. Pass optional VERSION argument to this macro to find the ModusToolbox
@@ -27,7 +27,7 @@ set(FETCHCONTENT_BASE_DIR "${CMAKE_SOURCE_DIR}/build/_deps" CACHE STRING "" FORC
 #    Linux:   ${HOME}/ModusToolbox/tools_${VERSION}
 #    MacOS:   /Applications/ModusToolbox/tools_${VERSION}
 #    Example:
-#      psoc4_add_tools(VERSION 2.1)
+#      psoc4_add_tools(VERSION 2.2)
 #
 macro(psoc4_add_tools)
   # Check CY_TOOLS_PATHS is set as environment variable
@@ -367,10 +367,13 @@ macro(psoc4_add_design_modus design_modus var_source_dir var_sources)
       cycfg_pins.h
       cycfg_pins.c
       cycfg_routing.h
-      cycfg_routing.c
       cycfg_system.h
       cycfg_system.c
     )
+    # TODO: data-driven from the BSP build recipe?
+    if (NOT ${BSP_NAME} STREQUAL CY8CKIT-145-40XX)
+      list(APPEND generated_sources cycfg_routing.c)
+    endif()
   endif()
 
   if(NOT EXISTS ${design_modus})
@@ -387,17 +390,17 @@ macro(psoc4_add_design_modus design_modus var_source_dir var_sources)
   unset(generated_sources)
   unset(design_dir)
 
-  # Check lib/psoc4pdl.cmake is already included
-  if(NOT DEFINED PSOC4PDL_DIR)
-    message(FATAL_ERROR "psoc4_add_design_modus: PSOC4PDL_DIR is not defined.")
+  # Check lib/mtb-pdl-cat2.cmake is already included
+  if(NOT DEFINED MTB_PDL_CAT2_DIR)
+    message(FATAL_ERROR "psoc4_add_design_modus: MTB_PDL_CAT2_DIR is not defined.")
   endif()
-  if(NOT EXISTS ${PSOC4PDL_DIR}/devicesupport.xml)
-    message(FATAL_ERROR "psoc4_add_design_modus: ${PSOC4PDL_DIR} doesn't point to device support library.")
+  if(NOT EXISTS ${MTB_PDL_CAT2_DIR}/devicesupport.xml)
+    message(FATAL_ERROR "psoc4_add_design_modus: ${MTB_PDL_CAT2_DIR} doesn't point to device support library.")
   endif()
 
   # Define custom recipe to update design.modus generated source
   add_custom_command(
-    COMMAND ${CY_TOOL_CFG_BACKEND_CLI} --library ${PSOC4PDL_DIR}/devicesupport.xml --tools ${CY_TOOLS_PATHS} --build ${design_modus} --readonly
+    COMMAND ${CY_TOOL_CFG_BACKEND_CLI} --library ${MTB_PDL_CAT2_DIR}/devicesupport.xml --tools ${CY_TOOLS_PATHS} --build ${design_modus} --readonly
     DEPENDS ${design_modus}
     OUTPUT  ${${var_sources}}
     COMMENT "Generating Device Configuration for ${design_modus}"
@@ -461,7 +464,7 @@ macro(psoc4_add_bsp_design_modus design_modus)
   )
   add_library(bsp_design_modus STATIC EXCLUDE_FROM_ALL ${BSP_GENERATED_SOURCES})
   target_include_directories(bsp_design_modus PUBLIC ${BSP_GENERATED_SOURCE_DIR})
-  target_link_libraries(bsp_design_modus PUBLIC psoc4pdl psoc4hal)
+  target_link_libraries(bsp_design_modus PUBLIC mtb-pdl-cat2 mtb-hal-cat2)
   # BSP sources include cycfg.h
   target_include_directories(bsp PUBLIC ${BSP_GENERATED_SOURCE_DIR})
 endmacro()
@@ -474,7 +477,7 @@ macro(psoc4_add_bsp_design_capsense design_capsense)
   )
   add_library(bsp_design_capsense STATIC EXCLUDE_FROM_ALL ${BSP_CAPSENSE_GENERATED_SOURCES})
   target_include_directories(bsp_design_capsense PUBLIC ${BSP_CAPSENSE_GENERATED_SOURCE_DIR})
-  target_link_libraries(bsp_design_capsense PUBLIC psoc4pdl capsense)
+  target_link_libraries(bsp_design_capsense PUBLIC mtb-pdl-cat2 capsense)
 endmacro()
 
 # Set application target variables and recipes
