@@ -48,21 +48,21 @@ trap status EXIT
 KERNEL="$($(which uname) -s)"
 case "$KERNEL" in
   CYGWIN*|MINGW*|MSYS*)
-    export GCC_TOOLCHAIN_PATH="$(cygpath --mixed "${GCC_TOOLCHAIN_PATH:-C:/Program Files (x86)/GNU Arm Embedded Toolchain/9 2020-q2-update}")"
+    export GCC_TOOLCHAIN_PATH="$(cygpath --mixed "${GCC_TOOLCHAIN_PATH:-C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2020-q4-major}")"
     export ARM_TOOLCHAIN_PATH="$(cygpath --mixed "${ARM_TOOLCHAIN_PATH:-C:/Program Files/ARMCompiler6.13}")"
     export IAR_TOOLCHAIN_PATH="$(cygpath --mixed "${IAR_TOOLCHAIN_PATH:-C:/Program Files (x86)/IAR Systems/Embedded Workbench 8.4/arm}")"
     export LLVM_TOOLCHAIN_PATH="$(cygpath --mixed "${LLVM_TOOLCHAIN_PATH:-C:/Program Files/LLVM}")"
-    default_toolchain_list="GCC ARM IAR LLVM"
+    default_toolchain_list="GCC ARM IAR"
     ;;
   Linux*)
-    export GCC_TOOLCHAIN_PATH="${GCC_TOOLCHAIN_PATH:-/opt/gcc-arm-none-eabi-9-2020-q2-update}"
+    export GCC_TOOLCHAIN_PATH="${GCC_TOOLCHAIN_PATH:-/opt/gcc-arm-none-eabi-10-2020-q4-major}"
     export LLVM_TOOLCHAIN_PATH="${LLVM_TOOLCHAIN_PATH:-/usr}"
-    default_toolchain_list="GCC LLVM"
+    default_toolchain_list="GCC"
     ;;
   Darwin*)
-    export GCC_TOOLCHAIN_PATH="${LLVM_TOOLCHAIN_PATH:-$HOME/Applications/gcc-arm-none-eabi-9-2020-q2-update}"
+    export GCC_TOOLCHAIN_PATH="${GCC_TOOLCHAIN_PATH:-/Applications/ARM}"
     export LLVM_TOOLCHAIN_PATH="${LLVM_TOOLCHAIN_PATH:-/usr/local/opt/llvm}"
-    default_toolchain_list="GCC LLVM"
+    default_toolchain_list="GCC"
     ;;
   *)
     echo >&2 "[ERROR]: unsupported OS: $KERNEL"
@@ -108,25 +108,25 @@ done
 
 # Set default values for all optional arguments
 # NOTE: commented non-essential BSPs to speedup the CI pipeline
-[[ -z ${bsp_list+x} ]] && bsp_list=(
-  "CY8CKIT-145-40XX"
-  "CY8CKIT-041-41XX"
-  "CY8CKIT-149"
+default_bsp_list=(
+  CY8CKIT-145-40XX
+  CY8CKIT-041-41XX
+  CY8CKIT-149
 )
-[[ -z ${os_list+x} ]] && os_list=(
-  "NOOS"
-  #"FREERTOS"
-  #"RTX"
+default_os_list=(
+  NOOS
+  #FREERTOS
+  #RTX
 )
-[[ -z ${toolchain_list+x} ]] && toolchain_list=(
-  "GCC"
-  "ARM"
-  "IAR"
+default_config_list=(
+  Debug
+  Release
 )
-[[ -z ${config_list+x} ]] && config_list=(
-  "Debug"
-  "Release"
-)
+
+[[ -z ${bsp_list+x} ]] && bsp_list=(${default_bsp_list[@]})
+[[ -z ${os_list+x} ]] && os_list=(${default_os_list[@]})
+[[ -z ${toolchain_list+x} ]] && toolchain_list=(${default_toolchain_list[@]})
+[[ -z ${config_list+x} ]] && config_list=(${default_config_list[@]})
 
 echo "TARGET list: ${bsp_list[*]}"
 echo "OS list: ${os_list[*]}"

@@ -211,6 +211,7 @@ macro(psoc4_load_bsp)
 
   # Some assets use Mbed-compatible BSP name ('-' -> '_')
   STRING(REGEX REPLACE "-" "_" MBED_BSP_NAME ${BSP_NAME})
+  add_definitions(-DTARGET_${MBED_BSP_NAME})
 
   # Either VERSION or TAG should be provided
   if(NOT DEFINED BSP_VERSION AND NOT DEFINED BSP_TAG)
