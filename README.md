@@ -1,6 +1,6 @@
 # CMake based build system for PSoC 4 designs
 
-[![Build Status](https://dev.azure.com/vmedvid/psoc4.cmake/_apis/build/status/medvid.psoc4.cmake?branchName=master)](https://dev.azure.com/vmedvid/psoc4.cmake/_build/latest?definitionId=4&branchName=master)
+[![Build Status](https://dev.azure.com/vmedvid/psoc4.cmake/_apis/build/status/medvid.psoc4.cmake?branchName=master)](https://dev.azure.com/vmedvid/psoc4.cmake/_build/latest?definitionId=10&branchName=master)
 
 ## Prerequisites
 
